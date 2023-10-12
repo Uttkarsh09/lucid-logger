@@ -9,6 +9,15 @@ Logger *Logger::GetInstance(const string file_name){
 	return logger_;
 }
 
+void Logger::deleteInstance(){
+	fprintf(fptr, "~~~ Log File Closed ~~~");
+	fclose(fptr);
+	delete logger_;
+	fptr = nullptr;
+	logger_ = nullptr;
+}
+
+
 string Logger::getLogLevelName(LogLevel level){
 	switch(level){
 		case LogLevel::OFF: return "OFF";

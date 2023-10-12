@@ -25,20 +25,16 @@ public:
 	
 	/// @brief 
 	/// @param level - Log level
-	/// @param format - C string to be logged which can contain embedded fromat specifiers 
-	/// 				that are replaced by the values specified in subsequent additional arguments
+	/// @param format - C string to be logged which can contain embedded fromat specifiers that are replaced by the values specified in subsequent additional arguments
 	/// @param (optional) variable names (if) used in the format string
 	void logIt(LogLevel level, const char * format, ...);
 
 	void setLogLevel(LogLevel level);
-	
 	string getLogLevelName(LogLevel level);
+	void deleteInstance();
 	
 	Logger() = delete;
-	~Logger(){
-		fprintf(fptr, "~~~ Log File Closed ~~~");
-		fclose(fptr);
-	}
+	
 
 protected:
 	static Logger* logger_;
