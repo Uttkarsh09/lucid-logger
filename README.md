@@ -8,7 +8,7 @@
 - add the `logger.hpp` file in your include folder and specify its path during compilation.
 - Either the  `logger.cpp` file can be used in the project or the lib can be downloaded.
 - ```
-	Logger *l = Logger::GetInstance("");
+	Logger *l = Logger::GetInstance("log_file_path.log");
 	l->logIt(l->INFO, "Message to be logged");
 	l->deleteInstance();
 ```
